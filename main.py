@@ -5,5 +5,5 @@ while True:
 	if name == 'q':
 		break
 	price = input('請輸入商品價格')
-	products.append(name)
+	products.append([name,price])
 print(products)
