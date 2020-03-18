@@ -1,13 +1,17 @@
-products = []
+import os
 
-#read files
-with open('products.csv' , 'r' , encoding='utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue
-		name,price = line.strip().split(',')
-		products.append([name,price])
-print(products)
+products = []
+if os.path.isfile('products.csv'):
+	#read files
+	with open('products.csv' , 'r' , encoding='utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue
+			name,price = line.strip().split(',')
+			products.append([name,price])
+	print(products)
+else:
+	print('找不到檔案，將建立新檔案')
 
 #input and save it
 while True:
